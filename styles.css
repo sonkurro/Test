@@ -66,3 +66,10 @@ body {
     font-style: italic;
     color: #00000;
 }
+.lesson-buttons {
+    margin-bottom: 20px;
+}
+
+.lesson-buttons button {
+    margin-right: 10px;
+}
