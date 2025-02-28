@@ -9,7 +9,7 @@ function showLesson(lessonNumber) {
     });
 
     // Hiển thị bài học được chọn
-    document.getElementById(`lesson${lessonNumber}`).style.display = 'flex';
+    document.getElementById(`lesson${lessonNumber}`).style.display = 'grid'; // Sửa thành 'grid'
 }
 
 // Mặc định hiển thị bài học 1
