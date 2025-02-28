@@ -1,13 +1,35 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Căn nội dung lên trên */
     align-items: center;
     min-height: 100vh; /* Đảm bảo body chiếm ít nhất toàn bộ chiều cao màn hình */
     background-color: #f0f0f0;
     margin: 0;
     padding: 20px; /* Thêm padding để tránh flashcard dính sát vào viền */
     box-sizing: border-box;
+}
+
+.lesson-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.lesson-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.lesson-buttons button:hover {
+    background-color: #0056b3;
 }
 
 .flashcard-container {
@@ -61,15 +83,29 @@ body {
     margin: 5px 0;
 }
 
+.back strong {
+    font-weight: bold;
+}
+
+/* Màu sắc cho các phần nội dung */
+.back .han-viet {
+    color: #FF0000; /* Màu đỏ cho Âm Hán Việt */
+}
+
+.back .nghia {
+    color: #008000; /* Màu xanh lá cây cho Nghĩa tiếng Việt */
+}
+
+.back .kun {
+    color: #0000FF; /* Màu xanh dương cho Âm Kun */
+}
+
+.back .on {
+    color: #800080; /* Màu tím cho Âm On */
+}
+
 .example {
     margin-left: 20px;
     font-style: italic;
-    color: #00000;
-}
-.lesson-buttons {
-    margin-bottom: 20px;
-}
-
-.lesson-buttons button {
-    margin-right: 10px;
+    color: #555; /* Màu chữ cho ví dụ */
 }
