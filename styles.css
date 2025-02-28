@@ -36,7 +36,7 @@ body {
 
 .flashcard-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Chia thành 4 cột */
+    grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
     gap: 20px; /* Khoảng cách giữa các flashcard */
     width: 100%;
     max-width: 1200px; /* Giới hạn chiều rộng tối đa */
