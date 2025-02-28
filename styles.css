@@ -2,19 +2,21 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Căn nội dung lên trên */
+    justify-content: flex-start;
     align-items: center;
-    min-height: 100vh; /* Đảm bảo body chiếm ít nhất toàn bộ chiều cao màn hình */
+    min-height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 20px; /* Thêm padding để tránh flashcard dính sát vào viền */
+    padding: 20px;
     box-sizing: border-box;
 }
 
 .lesson-buttons {
     margin-bottom: 20px;
     display: flex;
-    gap: 10px; /* Khoảng cách giữa các nút */
+    flex-wrap: wrap; /* Cho phép các nút xuống dòng khi không đủ chỗ */
+    gap: 10px;
+    justify-content: center; /* Căn giữa các nút */
 }
 
 .lesson-buttons button {
@@ -33,19 +35,24 @@ body {
 }
 
 .flashcard-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Khoảng cách đều giữa các flashcard */
-    align-items: center; /* Căn giữa các flashcard theo chiều ngang */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột */
+    gap: 20px; /* Khoảng cách giữa các flashcard */
+    width: 100%;
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .flashcard {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 200px; /* Chiều cao cố định cho flashcard */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .flashcard.flipped {
@@ -61,14 +68,13 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     box-sizing: border-box;
 }
 
 .front {
     background-color: #fac7c7;
-    font-size: 4em;
+    font-size: 2em; /* Giảm kích thước chữ để phù hợp với điện thoại */
 }
 
 .back {
@@ -76,7 +82,7 @@ body {
     transform: rotateY(180deg);
     flex-direction: column;
     align-items: flex-start;
-    font-size: 1em;
+    font-size: 0.9em; /* Giảm kích thước chữ để phù hợp với điện thoại */
 }
 
 .back p {
@@ -108,4 +114,39 @@ body {
     margin-left: 20px;
     font-style: italic;
     color: #555; /* Màu chữ cho ví dụ */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .flashcard-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cột cho màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .flashcard-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột cho máy tính bảng */
+    }
+
+    .front {
+        font-size: 1.5em; /* Giảm kích thước chữ */
+    }
+
+    .back {
+        font-size: 0.8em; /* Giảm kích thước chữ */
+    }
+}
+
+@media (max-width: 480px) {
+    .flashcard-container {
+        grid-template-columns: 1fr; /* 1 cột cho điện thoại */
+    }
+
+    .front {
+        font-size: 1.2em; /* Giảm kích thước chữ */
+    }
+
+    .back {
+        font-size: 0.7em; /* Giảm kích thước chữ */
+    }
 }
