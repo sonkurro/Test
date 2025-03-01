@@ -96,19 +96,19 @@ body {
 
 /* Màu sắc cho các phần nội dung */
 .back .han-viet {
-    color: #ff0f00; /* Màu đỏ cho Âm Hán Việt */
+    color: #FF0000; /* Màu đỏ cho Âm Hán Việt */
 }
 
 .back .nghia {
-    color: #ff0f00; /* Màu xanh lá cây cho Nghĩa tiếng Việt */
+    color: #008000; /* Màu xanh lá cây cho Nghĩa tiếng Việt */
 }
 
 .back .kun {
-    color: #217000; /* Màu xanh dương cho Âm Kun */
+    color: #0000FF; /* Màu xanh dương cho Âm Kun */
 }
 
 .back .on {
-    color: #4b1900; /* Màu tím cho Âm On */
+    color: #800080; /* Màu tím cho Âm On */
 }
 
 .example {
